@@ -1,3 +1,4 @@
+
 <ion-header>
     <ion-navbar>
         <ion-title>Login</ion-title>
@@ -5,6 +6,57 @@
 </ion-header>
 
 <ion-content padding>
-    <h2>Login page</h2>
-    <button ion-button (click)="mainpages()">ok</button>
+
+
+	<div align="center">
+		<h1 style="font-family:Georgia, serif ; color:darkgray">Welcome to <strong>E-SUB</strong></h1> <hr>
+		<img src="assets/usericon.png" alt="your image" width="200" height="200"> <hr>
+	
+	
+		<div class="container">
+		<label><h3>Username : </h3></label>
+		<div class="row" >
+		
+			
+		<div class="input-group" align="center">
+  		<span class="input-group-addon glyphicon glyphicon-user" id="sizing-addon1"></span>
+  		<input type="text" class="form-control" (blur)="onBlurMethod($event.target.value)" [(ngModel)]="nom"  placeholder="Username" aria-describedby="sizing-addon1">
+		
+		</div>
+		</div>
+		
+		<strong><p style="color:red">{{err}}</p></strong>
+
+<br><br>
+	<label><h3>Password : </h3></label>
+		<div class="row">
+		
+		<div class="input-group">
+  		<span class="input-group-addon  glyphicon glyphicon-lock" id="basic-addon1"></span>
+  		<input type="password" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
+		
+		</div>
+		</div>
+				<br><br>
+		<button ion-button color="secondary" (click)="presentLoading()" > Login </button>
+		<button ion-button color="danger" type="reset" > Cancel </button>
+		<br>
+		<p>Or</p> 
+		<button ion-button color="light" round>Sign in Here</button>
+</div>
+</div>
+<br>
+
+{{nom}}
 </ion-content>
+<!--
+<script>
+function verif(champ){
+	if(champ.value.length<20){
+			champ.style.backgroundColor = "#fba";
+	}
+}
+
+</script>
+-->
+
