@@ -162,6 +162,7 @@ gosign() {
   this.navCtrl.push(RegisterPage);
 }
 ngOnInit() {
+  //window.location.reload();
   
   
 } 

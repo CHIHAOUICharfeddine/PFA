@@ -49,7 +49,7 @@ export class RegisterPage {
       //window.localStorage.setItem("fullname",this.registerForm.value.fullname);
       console.log(this.fullname) ;
       this.authService.register(this.registerForm.value.email, this.registerForm.value.password).then( authService => {
-        
+        this.presentToast();
         this.navCtrl.push(TabsPage);
       }, error => {
         this.loading.dismiss().then( () => {
@@ -70,7 +70,7 @@ export class RegisterPage {
         dismissOnPageChange: true,
       });
       this.loading.present();
-      this.presentToast();
+      
     }
   }
 

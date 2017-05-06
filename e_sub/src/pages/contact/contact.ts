@@ -5,6 +5,7 @@ import { AuthService } from '../../providers/auth-service';
 import {TabsPage} from '../tabs/tabs';
 import {LoginPage} from '../login/login';
 import firebase from 'firebase';
+import {App} from 'ionic-angular';
 
 @Component({
   selector: 'page-contact',
@@ -16,11 +17,11 @@ email ;
   num ;
   score = [] ;
   score1 ;
-  constructor(public navCtrl: NavController, public angfire: AngularFire,public authService: AuthService) {
+  constructor(public navCtrl: NavController, public angfire: AngularFire,public authService: AuthService,public app:App) {
       this.email = window.localStorage.getItem('useremail');
       //this.score=2;
      // this.uid = window.localStorage.getItem('useruid');
-        
+       // this.app = app ;
        
      var user = firebase.auth().currentUser;
 var name, email, photoUrl, emailVerified;
@@ -53,7 +54,9 @@ firebase.database().ref('users/'+this.uid).on('value',(snapshot) => {
     window.localStorage.removeItem('currentuser');
     window.localStorage.removeItem('useremail');
     window.localStorage.removeItem('useruid');
-    this.navCtrl.push(LoginPage);
+    this.app.getRootNav().setRoot(TabsPage);
+
+
   }
 }
 
