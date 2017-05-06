@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../providers/auth-service';
 import {RegisterPage} from '../pages/register/register';
+import {Youtube} from '../pipes/youtube'
 
 
 
@@ -30,6 +31,7 @@ import {RegisterPage} from '../pages/register/register';
 @NgModule({
   declarations: [
     MyApp,
+    Youtube,
     AboutPage,
     LoginPage,
     ContactPage,
