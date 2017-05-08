@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{video.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div align="center">
+ 
+   <br><br><br>
+    
+ 
+ 
+     <label>Title : </label> <h3> {{video.title}}</h3>
+     <hr>
+     <iframe width="100%" height="300" [src]="video.url | youtube" frameborder="0" allowfullscreen></iframe>
+  <button ion-button outline>{{video.wrongans}}</button>
+  <button ion-button outline>{{video.trueans}}</button>
+     
+    
+
+<br><br>
+     
+ 
+
+
+ 
+ </div>
+
+
+</ion-content>

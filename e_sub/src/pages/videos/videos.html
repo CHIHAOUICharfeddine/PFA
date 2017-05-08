@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Videos page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>videos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h1>Videos list : </h1>
+
+<div >
+  <ion-list >
+  <ion-item *ngFor="let video of a" (click)="selectedVid(video)">
+   <ion-avatar item-left>
+      <img src="{{video.logo}}">
+    </ion-avatar>
+       <p> {{video.title}} </p>
+       
+        <br>
+        </ion-item>
+        </ion-list>
+  
+      
+
+  <!--  <iframe width="100%" height="300" [src]="b.url | youtube" frameborder="0" allowfullscreen></iframe>
+  <button ion-button outline>{{b.wrongans}}</button>
+  <button ion-button outline>{{b.trueans}}</button>  -->
+         </div> 
+</ion-content>

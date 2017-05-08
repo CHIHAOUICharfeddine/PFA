@@ -12,8 +12,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../providers/auth-service';
 import {RegisterPage} from '../pages/register/register';
-import {Youtube} from '../pipes/youtube'
-
+import {Youtube} from '../pipes/youtube';
+import {Videos} from '../pages/videos/videos';
+import {DetailsPage} from '../pages/details/details' ;
 
 
   // Initialize Firebase
@@ -31,6 +32,8 @@ import {Youtube} from '../pipes/youtube'
 @NgModule({
   declarations: [
     MyApp,
+    DetailsPage,
+    Videos,
     Youtube,
     AboutPage,
     LoginPage,
@@ -47,6 +50,8 @@ import {Youtube} from '../pipes/youtube'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    DetailsPage,
+    Videos,
     LoginPage,
     AboutPage,
     ContactPage,

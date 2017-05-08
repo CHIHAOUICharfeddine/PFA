@@ -5,21 +5,26 @@
 </ion-header>
 
 <ion-content padding>
-    <h2>Welcome to Ionic!</h2>
+    <h2 align="center">Improve your english !</h2>
+    
     <p>
-        This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
+        This starter project comes to improve your english skills.
     </p>
     <p>
-        Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
+        Please read the <code>RULES</code> carefully.
          </p>
+         <ul>
+            <li> Choose your level and start the video.</li> 
+            <li>   Answer each question with the right  subtitle.</li> 
+            <li>There is no time limit.</li>
+            <li>At the end you will be able to see the answers.</li> 
+         </ul>
+            <hr>
+     <button ion-button block (click)="govideos()">Level 1</button>
+    <button ion-button block color="secondary" (click)="govideos()">Level 2</button>
+    <button ion-button block color="danger" (click)="govideos()">Level 3</button>
         <br>
-         <div *ngFor="let b of a">
-        {{b.url}}
          
-
-  <iframe width="100%" height="300" [src]="b.url | youtube" frameborder="0" allowfullscreen></iframe>
-
-         </div>  
    
     
 </ion-content>
