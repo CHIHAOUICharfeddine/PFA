@@ -1,34 +1,57 @@
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>{{video.title}}</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
 
 <ion-content padding>
     <div align="center">
  
-   <br><br><br>
-    
+   <ion-item>
+    <ion-avatar item-left>
+      <img src="{{video.logo}}">
+    </ion-avatar>
  
  
-     <label>Title : </label> <h3> {{video.title}}</h3>
-     <hr>
-     <iframe width="100%" height="300" [src]="video.url | youtube" frameborder="0" allowfullscreen></iframe>
-  <button ion-button outline>{{video.wrongans}}</button>
-  <button ion-button outline>{{video.trueans}}</button>
+     <p style="font-size:250%"> {{video.title}}</p>
+
+   </ion-item>
+
+   <br><br>
      
-    
+     <iframe id="x"  width="100%" height="300" [src]="video.url | youtube" frameborder="0" allowfullscreen></iframe>
+     <div id="ans" *ngIf="i%2 == 0">
+       <h1 style="color: gray">Choose the right answer :</h1><br><br>
+  <button ion-button outline id="b1" (click)="wrong()">{{video.wrongans}}</button>
+  <button ion-button outline id="b2" (click)="right()">{{video.trueans}}</button>
+     
+     </div>
+
+
+     <div id="ans" *ngIf="i%2 == 1">
+       <h1 style="color: gray">Choose the right answer :</h1><br><br>
+       <button ion-button outline id="b2" (click)="right()">{{video.trueans}}</button>
+      <button ion-button outline id="b1" (click)="wrong()">{{video.wrongans}}</button>
+  
+     
+     </div>
+
+
 
 <br><br>
      
  
+<button id ="b3" ion-button (click)="changeColor()">Show answers</button>
 
-
+    <div id="r"></div>
  
  </div>
 
+<div id="back" align="center">
+<button ion-button round icon-left (click)="goback()"><ion-icon name="home"></ion-icon>Go back</button>
+</div>
 
 </ion-content>
