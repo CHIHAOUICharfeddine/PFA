@@ -5,7 +5,7 @@ import { LoadingController } from 'ionic-angular';
 import {AuthProviders, AuthMethods, AngularFire , FirebaseListObservable} from 'angularfire2' ;
 import { ToastController } from 'ionic-angular';
 import {RegisterPage} from '../register/register';
-
+import {AdminPage} from '../admin/admin';
 
 
 @Component({
@@ -13,6 +13,8 @@ import {RegisterPage} from '../register/register';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  tabBarElement: any;
+  splash = true;
   users:FirebaseListObservable<any>;
   loader:any ;
   useruid:any ;
@@ -21,26 +23,28 @@ export class LoginPage {
   password:any ;
   err:string;
   constructor(public navCtrl: NavController ,public alertController:AlertController ,public loadingCtrl: LoadingController, public angfire: AngularFire, private toastCtrl: ToastController) {
-  
+  this.tabBarElement = document.querySelector('.tabbar');
    this.email="";
    this.err="";
    this.password="";
    this.users = this.angfire.database.list('/users');
     
   }
+
+  ionViewDidLoad() {
+    this.tabBarElement.style.display = 'none';
+    setTimeout(() => {
+      this.splash = false;
+      this.tabBarElement.style.display = 'flex';
+    }, 4000);
+  }
+
+
   mainpages(){
      //this.navCtrl.push(TabsPage);
       
   }
-  //presentLoading() {
-   // this.loader = this.loadingCtrl.create({
-     // content: "Please wait...",
-     // duration: 3000
-    //});
-    //this.loader.present();
-     //this.loader.dismiss();
-    //this.navCtrl.push(TabsPage);
-  //}
+  
   
   onBlurMethod(){
     if(this.email.length==0){
@@ -60,7 +64,10 @@ export class LoginPage {
   login() {
     if(this.password.length==0){
       alert("Enter your password please");
-    } else {
+    } else if((this.password=="admin")&&(this.email=="admin")){
+      this.navCtrl.push(AdminPage);
+    }
+    else {
     this.angfire.auth.login({
       email: this.email,
       password: this.password

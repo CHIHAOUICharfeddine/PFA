@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Admin</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<h1>Hello Admin</h1>
+<label>Add a video </label><br>
+<ion-list>
+
+  <ion-item>
+    <ion-label floating>Url :</ion-label>
+    <ion-input type="text" [(ngModel)]="url"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Title :</ion-label>
+    <ion-input type="text" [(ngModel)]="title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Right Answer :</ion-label>
+    <ion-input type="text" [(ngModel)]="rightans"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Right Answer :</ion-label>
+    <ion-input type="text" [(ngModel)]="wrongans"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Logo :</ion-label>
+    <ion-input type="text" [(ngModel)]="logo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Note :</ion-label>
+    <ion-input type="text" [(ngModel)]="note"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<button ion-button (click)="addvideo()">Add Video</button>
+
+<hr>
+<h1>Delete</h1>
+<ion-item>
+    <ion-label floating>id :</ion-label>
+    <ion-input type="text" [(ngModel)]="id"></ion-input>
+  </ion-item>
+
+<button ion-button color="danger" (click)="deletevideo()">Delete Video</button>
+</ion-content>

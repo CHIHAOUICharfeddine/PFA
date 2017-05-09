@@ -18,11 +18,14 @@ import 'rxjs/Rx' ;
 })
 export class Videos {
    a = [];
+   tabBarElement: any;
    //c = [];
   email ; 
   uid;
 
  constructor(public navCtrl: NavController, public angFire:AngularFire, public navParam : NavParams) {
+   this.tabBarElement = document.querySelector('.tabbar');
+        this.tabBarElement.style.display = 'flex';
      this.navCtrl=navCtrl ;
     this.navParam = navParam ;
      firebase.database().ref('video').on('child_added',(snapshot) => {

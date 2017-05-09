@@ -14,6 +14,7 @@ import 'rxjs/Rx' ;
  
 })
 export class DetailsPage {
+     tabBarElement: any;
       video ;
       uid ;
       i ;
@@ -24,7 +25,8 @@ export class DetailsPage {
       ok:boolean ;
       
   constructor(public navCtrl: NavController , public navparams: NavParams , public alertController:AlertController) {
-        
+        this.tabBarElement = document.querySelector('.tabbar');
+        this.tabBarElement.style.display = 'none';
         this.i = Math.floor(Math.random() * 50) + 1;
         /*if (this.i%2==0) {
             this.ok==true;
@@ -92,7 +94,7 @@ export class DetailsPage {
       let score = window.localStorage.getItem('score');
     console.log("okkk");
     var c = parseInt(score);
-    c=c-10 ;
+    c=c-5 ;
     console.log(score);
     var dbUpdate = firebase.database().ref("users/"+this.uid).update({score : c}) ;
 

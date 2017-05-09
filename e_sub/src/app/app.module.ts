@@ -15,6 +15,7 @@ import {RegisterPage} from '../pages/register/register';
 import {Youtube} from '../pipes/youtube';
 import {Videos} from '../pages/videos/videos';
 import {DetailsPage} from '../pages/details/details' ;
+import{AdminPage} from '../pages/admin/admin' ;
 
 
   // Initialize Firebase
@@ -32,6 +33,7 @@ import {DetailsPage} from '../pages/details/details' ;
 @NgModule({
   declarations: [
     MyApp,
+    AdminPage,
     DetailsPage,
     Videos,
     Youtube,
@@ -50,6 +52,7 @@ import {DetailsPage} from '../pages/details/details' ;
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AdminPage,
     DetailsPage,
     Videos,
     LoginPage,
