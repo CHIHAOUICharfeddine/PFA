@@ -15,7 +15,7 @@ import {AdminPage} from '../admin/admin';
 export class LoginPage {
   tabBarElement: any;
   splash = true;
-  users:FirebaseListObservable<any>;
+  //users:FirebaseListObservable<any>;
   loader:any ;
   useruid:any ;
   user:any ;
@@ -27,7 +27,7 @@ export class LoginPage {
    this.email="";
    this.err="";
    this.password="";
-   this.users = this.angfire.database.list('/users');
+  // this.users = this.angfire.database.list('/users');
     
   }
 
@@ -37,12 +37,6 @@ export class LoginPage {
       this.splash = false;
       this.tabBarElement.style.display = 'flex';
     }, 4000);
-  }
-
-
-  mainpages(){
-     //this.navCtrl.push(TabsPage);
-      
   }
   
   
@@ -88,11 +82,8 @@ export class LoginPage {
         window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
         window.localStorage.setItem('useremail', this.user);
         window.localStorage.setItem('useruid', this.useruid);
-         //window.localStorage.setItem('email', JSON.stringify(response.auth.email));
-         //window.localStorage.setItem('uid', JSON.stringify(response.auth.uid));
         this.navCtrl.pop();
       }).catch((error) => {
-        //alert("Invalide Email or Password") ;
         this.presentToast();
     })
   }
@@ -128,49 +119,8 @@ fblogin() {
   }
 
   // sign in 
-signin() {
-  let prompt = this.alertController.create({
-    title: 'User Registration ' ,
-    message: 'Enter Email and Password',
-    inputs: [
-      {
-        name:'email',
-        placeholder:"Email..."
-      },
-      {
-        name:'password',
-        placeholder:"password..."
-      }
-    ],
-    buttons: [
-      {
-        text : "Cancel" ,
-        handler : data => {
-          console.log("canceled") ;
-        }
-      } ,
-       {
-        text : "Register" ,
-        handler : data => {
-          this.users.push({
-            email : data.email,
-            password : data.password,
-            score: "0"
-          })
-        }
-      } ,
-    ]
-  });
-
-  prompt.present();
-}
-
 gosign() {
   this.navCtrl.push(RegisterPage);
 }
-ngOnInit() {
-  //window.location.reload();
-  
-  
-} 
+
 }

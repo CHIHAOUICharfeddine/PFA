@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Profile
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,24 +9,25 @@
 <ion-content>
   
   <div align="center">
-  <ion-card>  
+  <ion-card *ngFor="let scor of score">  
      
      
-      <li *ngFor="let scor of score">
-        <ion-card-header>
-        <h1> Hello <strong> {{scor.name}}</strong></h1>
-        </ion-card-header>
-
+      
         <ion-card-content>
-           <b>Your email : </b><i>{{scor.email}}</i>
+        <ion-card-title>
+        <h1> Hello <strong> {{scor.name}}</strong></h1>
+        </ion-card-title>
+
+        
+          <ion-icon name="at" item-left></ion-icon> <b>Your email : </b><i>{{scor.email}}</i>
     
      <hr>
-     <b>Your Score : </b><i>{{scor.score}}</i>
+     <ion-icon name="ribbon" item-left></ion-icon><b>Your Score : </b><i>{{scor.score}}</i>
      <br><br>
-     <button ion-button color="light" (click)="ChangeUsername()">Change Username</button>
-      <button ion-button color="danger" (click)="logout()">Logout</button>
+     <button ion-button color="light" (click)="ChangeUsername()"><ion-icon name="construct" item-left></ion-icon>Change Username</button>
+      <button ion-button color="danger" (click)="logout()"> <ion-icon name="log-out"></ion-icon>Logout</button>
       </ion-card-content>
-      </li> 
+       
       
 </ion-card>
 

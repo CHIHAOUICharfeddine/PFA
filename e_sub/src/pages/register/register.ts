@@ -76,7 +76,7 @@ export class RegisterPage {
 
 presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'User Added !',
+      message: 'You have signed in successfully !',
      duration : 5000 ,
       showCloseButton:true
     });

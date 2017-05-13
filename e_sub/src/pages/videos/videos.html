@@ -14,24 +14,20 @@
 
 
 <ion-content padding>
-<h1>Videos list : </h1>
-
-<div >
-  <ion-list >
-  <ion-item *ngFor="let video of a" (click)="selectedVid(video)">
-   <ion-avatar item-left>
-      <img src="{{video.logo}}">
-    </ion-avatar>
-       <p> {{video.title}} </p>
-       
-        <br>
-        </ion-item>
-        </ion-list>
   
+
+  <ion-slides pager effect="coverflow" loop="true" speed="1000">
+    
+    
+  <ion-slide *ngFor="let video of a" (click)="selectedVid(video)" >
+  <h1 style="color:dimgrey">{{video.title}}</h1><hr>
+   <img src= "{{video.logo}}">
+  </ion-slide>
+  </ion-slides>
       
 
   <!--  <iframe width="100%" height="300" [src]="b.url | youtube" frameborder="0" allowfullscreen></iframe>
   <button ion-button outline>{{b.wrongans}}</button>
   <button ion-button outline>{{b.trueans}}</button>  -->
-         </div> 
+         
 </ion-content>

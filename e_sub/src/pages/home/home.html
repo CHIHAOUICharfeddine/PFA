@@ -20,9 +20,9 @@
             <li>At the end you will be able to see the answers.</li> 
          </ul>
             <hr>
-     <button ion-button block (click)="govideos()">Level 1</button>
-    <button ion-button block color="secondary" (click)="govideos()">Level 2</button>
-    <button ion-button block color="danger" (click)="govideos()">Level 3</button>
+     <button ion-button block (click)="govideos()">Easy</button>
+    <button id="btn1" ion-button block color="secondary" (click)="govideos1()">Medium</button>
+    <button id="btn2" [disabled]="true" ion-button  block color="danger" (click)="govideos2()">Hard</button>
         <br>
          
    

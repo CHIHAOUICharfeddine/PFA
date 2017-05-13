@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {AuthProviders, AuthMethods, AngularFire , FirebaseListObservable} from 'angularfire2' ;
+import {AngularFire} from 'angularfire2' ;
 import { AuthService } from '../../providers/auth-service';
 import {TabsPage} from '../tabs/tabs';
-import {LoginPage} from '../login/login';
+
 import firebase from 'firebase';
 import {App} from 'ionic-angular';
 
@@ -22,8 +22,7 @@ email ;
       //this.score=2;
      // this.uid = window.localStorage.getItem('useruid');
        // this.app = app ;
-       
-     var user = firebase.auth().currentUser;
+        var user = firebase.auth().currentUser;
 var name, email, photoUrl, emailVerified;
 
 if (user != null) {
@@ -46,6 +45,7 @@ firebase.database().ref('users/'+this.uid).on('value',(snapshot) => {
        console.log(this.score[0]);
        //this.score1=this.score[0] ;
       });
+   
       
   }
 
@@ -58,5 +58,7 @@ firebase.database().ref('users/'+this.uid).on('value',(snapshot) => {
 
 
   }
+
+
 }
 

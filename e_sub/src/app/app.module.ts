@@ -15,6 +15,7 @@ import {RegisterPage} from '../pages/register/register';
 import {Youtube} from '../pipes/youtube';
 import {Videos} from '../pages/videos/videos';
 import {DetailsPage} from '../pages/details/details' ;
+import {DetailsPage1} from '../pages/details1/details' ;
 import{AdminPage} from '../pages/admin/admin' ;
 
 
@@ -35,6 +36,7 @@ import{AdminPage} from '../pages/admin/admin' ;
     MyApp,
     AdminPage,
     DetailsPage,
+    DetailsPage1,
     Videos,
     Youtube,
     AboutPage,
@@ -54,6 +56,7 @@ import{AdminPage} from '../pages/admin/admin' ;
     MyApp,
     AdminPage,
     DetailsPage,
+    DetailsPage1,
     Videos,
     LoginPage,
     AboutPage,
