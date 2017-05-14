@@ -1,6 +1,6 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
+  "name": "e_sub",
+  "author": "Nabil Adouni",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "@angular/platform-browser": "4.0.0",
     "@angular/platform-browser-dynamic": "4.0.0",
     "@ionic-native/core": "^3.6.1",
+    "@ionic-native/network": "^3.8.0",
     "@ionic-native/splash-screen": "3.4.2",
     "@ionic-native/status-bar": "3.4.2",
     "@ionic/storage": "2.0.1",

@@ -17,6 +17,7 @@ import {Videos} from '../pages/videos/videos';
 import {DetailsPage} from '../pages/details/details' ;
 import {DetailsPage1} from '../pages/details1/details' ;
 import{AdminPage} from '../pages/admin/admin' ;
+import{Network} from '@ionic-native/network' ;
 
 
   // Initialize Firebase
@@ -69,7 +70,8 @@ import{AdminPage} from '../pages/admin/admin' ;
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    Network
   ]
 })
 export class AppModule {}
