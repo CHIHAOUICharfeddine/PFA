@@ -6,69 +6,69 @@
 </ion-header> -->
 
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
-  <div class="flb">
-    <div class="Aligner-item Aligner-item--top"></div>
-    <img src="assets/logo2.png">
-    <div class="Aligner-item Aligner-item--bottom"></div>
-  </div>
+    <div class="flb">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <img src="assets/logo2.png">
+        <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
 </div>
 
 
 
 <ion-content padding>
-	<div class="side1">
-		
-	<img src="assets/E-sub.png" width="60" height="60">
-	
-	</div>
-	<div class="side2">
-		<div align="center">
-			<h1 style="font-family:Georgia, serif ; color:darkgray">Welcome to <strong>E-SUB</strong></h1> 
-		</div>
-		</div>
-		<hr>
-		
-	<div align="center">
-		
-		<img src="assets/usericon.png" alt="your image" width="200" height="200"> <hr>
-	
-	
-		<div class="container">
-		<label><h3>Email : </h3></label>
-		<div class="row" >
-		
-			
-		<div class="input-group" align="center">
-  		<span class="input-group-addon glyphicon glyphicon-user" id="sizing-addon1"></span>
-  		<input type="text" class="form-control" (blur)="onBlurMethod($event.target.value)" [(ngModel)]="email"  placeholder="Email..." aria-describedby="sizing-addon1">
-		
-		</div>
-		</div>
-		
-		<strong><p style="color:red">{{err}}</p></strong>
+    <div class="side1">
 
-<br><br>
-	<label><h3>Password : </h3></label>
-		<div class="row">
-		
-		<div class="input-group">
-  		<span class="input-group-addon  glyphicon glyphicon-lock" id="basic-addon1"></span>
-  		<input type="password" class="form-control" placeholder="Password..." aria-describedby="basic-addon1" [(ngModel)]="password">
-		
-		</div>
-		</div>
-				<br><br>
-		<button ion-button color="secondary" (click)="login()" > Login </button>
-		<button ion-button color="danger" type="reset" > Cancel </button>
-		<br>
-		
-		<button ion-button round (click)="fblogin()">Facebook</button> <br><p>Or</p> 
-		<button ion-button color="light" round (click)="gosign()">Sign in Here</button>
-</div>
-</div>
-<br>
+        <img src="assets/E-sub.png" width="60" height="60">
+
+    </div>
+    <div class="side2">
+        <div align="center">
+            <h1 style="font-family:Georgia, serif ; color:darkgray">Welcome to <strong>E-SUB</strong></h1>
+        </div>
+    </div>
+    <hr>
+
+    <div align="center">
+
+        <img src="assets/usericon.png" alt="your image" width="100" height="100">
+        <hr>
+
+
+        <div class="container">
+            <label><h3>Email: </h3></label>
+            <div class="row">
+
+
+                <div class="input-group" align="center">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="sizing-addon1"></span>
+                    <input type="email" class="form-control" (blur)="onBlurMethod($event.target.value)" [(ngModel)]="email" placeholder="Email..." aria-describedby="sizing-addon1">
+
+                </div>
+            </div>
+
+            <strong><p style="color:red">{{err}}</p></strong>
+
+            <br><br>
+            <label><h3>Password: </h3></label>
+            <div class="row">
+
+                <div class="input-group">
+                    <span class="input-group-addon  glyphicon glyphicon-lock" id="basic-addon1"></span>
+                    <input type="password" class="form-control" placeholder="Password..." aria-describedby="basic-addon1" [(ngModel)]="password">
+
+                </div>
+            </div>
+            <br><br>
+            <button ion-button color="secondary" (click)="login()"> Login </button>
+            <button ion-button color="danger" type="reset"> Cancel </button>
+            <br>
+
+            <button ion-button round (click)="fblogin()">Facebook</button> <br>
+            <p>Or</p>
+            <button ion-button color="light" round (click)="gosign()">Sign in Here</button>
+        </div>
+    </div>
+    <br>
 
 
 </ion-content>
-
-

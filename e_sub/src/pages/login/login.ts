@@ -28,7 +28,7 @@ export class LoginPage {
    this.err="";
    this.password="";
   // this.users = this.angfire.database.list('/users');
-    
+
   }
 
   ionViewDidLoad() {
@@ -38,23 +38,23 @@ export class LoginPage {
       this.tabBarElement.style.display = 'flex';
     }, 4000);
   }
-  
-  
+
+
   onBlurMethod(){
     if(this.email.length==0){
         this.err="Enter Username";
     }else if(this.email.length<2){
         this.err="Username too short";
-    } 
-    
+    }
+
     else if(this.email.length>20){
         this.err="Username too long";
     }else { this.err="" ;}
-   
+
   }
 
 
-  //login method 
+  //login method
   login() {
     if(this.password.length==0){
       alert("Enter your password please");
@@ -68,7 +68,7 @@ export class LoginPage {
     },
       {
         provider: AuthProviders.Password,
-        method: AuthMethods.Password  
+        method: AuthMethods.Password
       }).then((response) => {
         this.user= response.auth.email ;
         this.useruid = response.auth.uid ;
@@ -82,7 +82,7 @@ export class LoginPage {
         window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
         window.localStorage.setItem('useremail', this.user);
         window.localStorage.setItem('useruid', this.useruid);
-        this.navCtrl.pop();
+        this.navCtrl.setRoot(TabsPage);
       }).catch((error) => {
         this.presentToast();
     })
@@ -90,7 +90,7 @@ export class LoginPage {
 }
 
 
-//Facebook login 
+//Facebook login
 fblogin() {
     this.angfire.auth.login({
       provider: AuthProviders.Facebook,
@@ -106,19 +106,19 @@ fblogin() {
       }).catch((error) => {
         console.log(error);
     })
-    
+
   }
 
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Invalid Email or Password',
-     
+
       showCloseButton:true
     });
     toast.present();
   }
 
-  // sign in 
+  // sign in
 gosign() {
   this.navCtrl.push(RegisterPage);
 }

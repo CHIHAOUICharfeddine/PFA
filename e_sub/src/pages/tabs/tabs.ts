@@ -19,7 +19,7 @@ export class TabsPage {
    // window.localStorage.removeItem('currentuser');
       if (!this.isLoggedin()) {
         console.log('Not logged ') ;
-        this.navCtrl.push(LoginPage);
+        this.navCtrl.setRoot(LoginPage);
       }
   }
 
